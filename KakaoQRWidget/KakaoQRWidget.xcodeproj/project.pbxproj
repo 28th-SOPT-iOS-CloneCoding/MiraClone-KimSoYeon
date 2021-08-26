@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		92640D2226D7C79200391C97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2126D7C79200391C97 /* AppDelegate.swift */; };
 		92640D2426D7C79200391C97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2326D7C79200391C97 /* SceneDelegate.swift */; };
-		92640D2626D7C79200391C97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2526D7C79200391C97 /* ViewController.swift */; };
-		92640D2926D7C79200391C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2726D7C79200391C97 /* Main.storyboard */; };
+		92640D2626D7C79200391C97 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2526D7C79200391C97 /* QRViewController.swift */; };
 		92640D2B26D7C79500391C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2A26D7C79500391C97 /* Assets.xcassets */; };
 		92640D2E26D7C79500391C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */; };
+		92640D3826D7CCA500391C97 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D3726D7CCA500391C97 /* MainViewController.swift */; };
 		940E5DE9790DB70962B579A5 /* Pods_KakaoQRWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +21,11 @@
 		92640D1E26D7C79200391C97 /* KakaoQRWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoQRWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92640D2126D7C79200391C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92640D2326D7C79200391C97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92640D2526D7C79200391C97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		92640D2826D7C79200391C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92640D2526D7C79200391C97 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		92640D2A26D7C79500391C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92640D2D26D7C79500391C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92640D2F26D7C79500391C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92640D3726D7CCA500391C97 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoQRWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQRWidget.release.xcconfig"; path = "Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +48,6 @@
 				4168ED414A587BA47388672D /* Pods-KakaoQRWidget.debug.xcconfig */,
 				E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,7 +84,8 @@
 		92640D3526D7C89200391C97 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				92640D2526D7C79200391C97 /* ViewController.swift */,
+				92640D2526D7C79200391C97 /* QRViewController.swift */,
+				92640D3726D7CCA500391C97 /* MainViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -93,7 +93,6 @@
 		92640D3626D7C89800391C97 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				92640D2726D7C79200391C97 /* Main.storyboard */,
 				92640D2A26D7C79500391C97 /* Assets.xcassets */,
 				92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */,
 			);
@@ -169,7 +168,6 @@
 			files = (
 				92640D2E26D7C79500391C97 /* LaunchScreen.storyboard in Resources */,
 				92640D2B26D7C79500391C97 /* Assets.xcassets in Resources */,
-				92640D2926D7C79200391C97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,23 +220,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92640D2626D7C79200391C97 /* ViewController.swift in Sources */,
+				92640D2626D7C79200391C97 /* QRViewController.swift in Sources */,
 				92640D2226D7C79200391C97 /* AppDelegate.swift in Sources */,
 				92640D2426D7C79200391C97 /* SceneDelegate.swift in Sources */,
+				92640D3826D7CCA500391C97 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		92640D2726D7C79200391C97 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92640D2826D7C79200391C97 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
