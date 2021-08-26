@@ -13,9 +13,11 @@
 		92640D2926D7C79200391C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2726D7C79200391C97 /* Main.storyboard */; };
 		92640D2B26D7C79500391C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2A26D7C79500391C97 /* Assets.xcassets */; };
 		92640D2E26D7C79500391C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */; };
+		940E5DE9790DB70962B579A5 /* Pods_KakaoQRWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4168ED414A587BA47388672D /* Pods-KakaoQRWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQRWidget.debug.xcconfig"; path = "Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		92640D1E26D7C79200391C97 /* KakaoQRWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoQRWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92640D2126D7C79200391C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92640D2326D7C79200391C97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		92640D2A26D7C79500391C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92640D2D26D7C79500391C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92640D2F26D7C79500391C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoQRWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQRWidget.release.xcconfig"; path = "Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940E5DE9790DB70962B579A5 /* Pods_KakaoQRWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		255F4DB16E24D5E7A874E80F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4168ED414A587BA47388672D /* Pods-KakaoQRWidget.debug.xcconfig */,
+				E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		92640D1526D7C79200391C97 = {
 			isa = PBXGroup;
 			children = (
 				92640D2026D7C79200391C97 /* KakaoQRWidget */,
 				92640D1F26D7C79200391C97 /* Products */,
+				255F4DB16E24D5E7A874E80F /* Pods */,
+				E63218783DB5A7A6A8FABC33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +100,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E63218783DB5A7A6A8FABC33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92640D3226D7C79500391C97 /* Build configuration list for PBXNativeTarget "KakaoQRWidget" */;
 			buildPhases = (
+				817B04C861C693B5C1A3DEB1 /* [CP] Check Pods Manifest.lock */,
 				92640D1A26D7C79200391C97 /* Sources */,
 				92640D1B26D7C79200391C97 /* Frameworks */,
 				92640D1C26D7C79200391C97 /* Resources */,
+				1F7640A83081FF9991AD6167 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +174,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F7640A83081FF9991AD6167 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		817B04C861C693B5C1A3DEB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KakaoQRWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92640D1A26D7C79200391C97 /* Sources */ = {
@@ -299,6 +368,7 @@
 		};
 		92640D3326D7C79500391C97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4168ED414A587BA47388672D /* Pods-KakaoQRWidget.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +388,7 @@
 		};
 		92640D3426D7C79500391C97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
