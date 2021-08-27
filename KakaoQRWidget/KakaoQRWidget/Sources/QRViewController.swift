@@ -14,6 +14,12 @@ class QRViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var cancelButton = UIButton().then {
+        $0.setTitle("", for: .normal)
+        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
+        $0.tintColor = .black
+    }
+    
     private var titleLabel = UILabel().then {
         $0.text = "입장을 위한 QR x C♾V"
         $0.textColor = .black
@@ -73,8 +79,8 @@ class QRViewController: UIViewController {
         
         configUI()
         setConstraints()
-        
         setQRImageView()
+        setAction()
     }
 }
 
@@ -86,8 +92,13 @@ extension QRViewController {
     }
     
     func setConstraints() {
-        view.addSubviews([titleLabel, subTitleLabel, backView])
+        view.addSubviews([cancelButton, titleLabel, subTitleLabel, backView])
         backView.addSubviews([numberLabel, qrImageView, inoculationLabel, loadButton])
+        
+        cancelButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(70)
+            make.trailing.equalToSuperview().inset(20)
+        }
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
@@ -182,5 +193,14 @@ extension QRViewController {
         default :
             print("Error")
         }
+    }
+}
+
+extension QRViewController {
+    func setAction() {
+        let action = UIAction { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        cancelButton.addAction(action, for: .touchUpInside)
     }
 }
