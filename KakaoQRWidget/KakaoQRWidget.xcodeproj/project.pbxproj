@@ -13,6 +13,9 @@
 		92640D2B26D7C79500391C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2A26D7C79500391C97 /* Assets.xcassets */; };
 		92640D2E26D7C79500391C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */; };
 		92640D3826D7CCA500391C97 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D3726D7CCA500391C97 /* MainViewController.swift */; };
+		92EBA14A26D907D800B133B3 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBA14926D907D800B133B3 /* CALayer+.swift */; };
+		92EBA14C26D9086400B133B3 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBA14B26D9086400B133B3 /* UIView+.swift */; };
+		92EBA15226D9172300B133B3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBA15126D9172300B133B3 /* UIColor+.swift */; };
 		940E5DE9790DB70962B579A5 /* Pods_KakaoQRWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		92640D2F26D7C79500391C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92640D3726D7CCA500391C97 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoQRWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92EBA14926D907D800B133B3 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		92EBA14B26D9086400B133B3 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		92EBA15126D9172300B133B3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQRWidget.release.xcconfig"; path = "Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,10 +99,21 @@
 		92640D3626D7C89800391C97 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92EBA14826D907C100B133B3 /* Extensions */,
 				92640D2A26D7C79500391C97 /* Assets.xcassets */,
 				92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		92EBA14826D907C100B133B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				92EBA14926D907D800B133B3 /* CALayer+.swift */,
+				92EBA14B26D9086400B133B3 /* UIView+.swift */,
+				92EBA15126D9172300B133B3 /* UIColor+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E63218783DB5A7A6A8FABC33 /* Frameworks */ = {
@@ -220,10 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92EBA14C26D9086400B133B3 /* UIView+.swift in Sources */,
 				92640D2626D7C79200391C97 /* QRViewController.swift in Sources */,
 				92640D2226D7C79200391C97 /* AppDelegate.swift in Sources */,
 				92640D2426D7C79200391C97 /* SceneDelegate.swift in Sources */,
+				92EBA14A26D907D800B133B3 /* CALayer+.swift in Sources */,
 				92640D3826D7CCA500391C97 /* MainViewController.swift in Sources */,
+				92EBA15226D9172300B133B3 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

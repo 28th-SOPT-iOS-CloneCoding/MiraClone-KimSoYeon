@@ -21,16 +21,12 @@ class MainViewController: UIViewController {
     
     // MARK: - LifeCycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        navigationController?.navigationBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configUI()
+        setConstraints()
+        
         becomeFirstResponder()
     }
     
@@ -45,7 +41,9 @@ class MainViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             let vc = QRViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .coverVertical
+            present(vc, animated: true, completion: nil)
         }
     }
 }
@@ -53,8 +51,11 @@ class MainViewController: UIViewController {
 extension MainViewController {
     func configUI() {
         view.backgroundColor = .white
-        
+    }
+    
+    func setConstraints() {
         view.addSubview(guideLabel)
+        
         guideLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
