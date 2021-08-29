@@ -81,6 +81,15 @@ class QRViewController: UIViewController {
         setConstraints()
         setQRImageView()
         setAction()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didTakeScreenShot(notification:)), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+    }
+    
+    @objc
+    func didTakeScreenShot(notification: Notification) {
+        let alert = UIAlertController(title: "⚡ 경고 ⚡", message: "이 화면은 스트린 캡처가 안됩니다.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "쳇.", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
