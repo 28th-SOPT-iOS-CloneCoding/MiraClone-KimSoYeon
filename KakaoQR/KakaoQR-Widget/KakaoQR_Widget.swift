@@ -9,40 +9,41 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in context: Context) -> KakaoEntry {
+        KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    func getSnapshot(in context: Context, completion: @escaping (KakaoEntry) -> ()) {
+        let entry = KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        var entries: [KakaoEntry] = []
+        var policy: TimelineReloadPolicy = .atEnd
+        
+        let entry = KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!)
+        entries.append(entry)
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries, policy: policy)
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct KakaoEntry: TimelineEntry {
     let date: Date
+    let image: UIImage
 }
 
 struct KakaoQR_WidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            Image("Placeholder")
+                .resizable()
+                .scaledToFill()
+        }
     }
 }
 
@@ -61,7 +62,13 @@ struct KakaoQR_Widget: Widget {
 
 struct KakaoQR_Widget_Previews: PreviewProvider {
     static var previews: some View {
-        KakaoQR_WidgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+        }
     }
 }
