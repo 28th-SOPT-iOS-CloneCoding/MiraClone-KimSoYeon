@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  KakaoQRWidget
+//  KakaoQR
 //
-//  Created by soyeon on 2021/08/26.
+//  Created by soyeon on 2021/08/30.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let rootVC = MainViewController()
+        let rootVC = MainVC()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }

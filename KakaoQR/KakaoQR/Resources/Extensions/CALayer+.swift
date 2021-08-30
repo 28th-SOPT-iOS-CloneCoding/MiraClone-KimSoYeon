@@ -1,11 +1,10 @@
 //
 //  CALayer+.swift
-//  KakaoQRWidget
+//  KakaoQR
 //
-//  Created by soyeon on 2021/08/27.
+//  Created by soyeon on 2021/08/30.
 //
 
-import Foundation
 import UIKit
 
 extension CALayer {

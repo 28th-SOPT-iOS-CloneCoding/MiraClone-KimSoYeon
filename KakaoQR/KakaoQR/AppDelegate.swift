@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  KakaoQRWidget
+//  KakaoQR
 //
-//  Created by soyeon on 2021/08/26.
+//  Created by soyeon on 2021/08/30.
 //
 
 import UIKit

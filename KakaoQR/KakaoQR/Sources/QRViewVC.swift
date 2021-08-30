@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  KakaoQRWidget
+//  QRViewVC.swift
+//  KakaoQR
 //
-//  Created by soyeon on 2021/08/26.
+//  Created by soyeon on 2021/08/30.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import SnapKit
 import Then
 import CoreImage.CIFilterBuiltins
 
-class QRViewController: UIViewController {
+class QRViewVC: UIViewController {
     
     // MARK: - Properties
     
@@ -116,7 +116,7 @@ class QRViewController: UIViewController {
 
 // MARK: - Custom Methods
 
-extension QRViewController {
+extension QRViewVC {
     func configUI() {
         view.backgroundColor = .white
     }
@@ -247,7 +247,7 @@ extension QRViewController {
     }
 }
 
-extension QRViewController {
+extension QRViewVC {
     func setAction() {
         let dismissAction = UIAction { _ in
             self.dismiss(animated: true, completion: nil)

@@ -1,15 +1,15 @@
 //
-//  MainViewController.swift
-//  KakaoQRWidget
+//  MainVC.swift
+//  KakaoQR
 //
-//  Created by soyeon on 2021/08/26.
+//  Created by soyeon on 2021/08/30.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class MainViewController: UIViewController {
+class MainVC: UIViewController {
     
     // MARK: - Properties
     
@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            let vc = QRViewController()
+            let vc = QRViewVC()
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .coverVertical
             present(vc, animated: true, completion: nil)
@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController {
+extension MainVC {
     func configUI() {
         view.backgroundColor = .white
     }
