@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92317D1E26DCE3900037D15E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92317D1D26DCE3900037D15E /* WidgetKit.framework */; };
+		92317D2026DCE3900037D15E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92317D1F26DCE3900037D15E /* SwiftUI.framework */; };
+		92317D2326DCE3910037D15E /* QRWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92317D2226DCE3910037D15E /* QRWidget.swift */; };
+		92317D2526DCE3920037D15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92317D2426DCE3920037D15E /* Assets.xcassets */; };
+		92317D2926DCE3920037D15E /* QRWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92317D1C26DCE3900037D15E /* QRWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		92640D2226D7C79200391C97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2126D7C79200391C97 /* AppDelegate.swift */; };
 		92640D2426D7C79200391C97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2326D7C79200391C97 /* SceneDelegate.swift */; };
 		92640D2626D7C79200391C97 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92640D2526D7C79200391C97 /* QRViewController.swift */; };
@@ -19,8 +24,38 @@
 		940E5DE9790DB70962B579A5 /* Pods_KakaoQRWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		92317D2726DCE3920037D15E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92640D1626D7C79200391C97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92317D1B26DCE3900037D15E;
+			remoteInfo = QRWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92317D2A26DCE3920037D15E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				92317D2926DCE3920037D15E /* QRWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4168ED414A587BA47388672D /* Pods-KakaoQRWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQRWidget.debug.xcconfig"; path = "Target Support Files/Pods-KakaoQRWidget/Pods-KakaoQRWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		92317D1C26DCE3900037D15E /* QRWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QRWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		92317D1D26DCE3900037D15E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		92317D1F26DCE3900037D15E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		92317D2226DCE3910037D15E /* QRWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRWidget.swift; sourceTree = "<group>"; };
+		92317D2426DCE3920037D15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92317D2626DCE3920037D15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92640D1E26D7C79200391C97 /* KakaoQRWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoQRWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92640D2126D7C79200391C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92640D2326D7C79200391C97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +72,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		92317D1926DCE3900037D15E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92317D2026DCE3900037D15E /* SwiftUI.framework in Frameworks */,
+				92317D1E26DCE3900037D15E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92640D1B26D7C79200391C97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,10 +101,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		92317D2126DCE3900037D15E /* QRWidget */ = {
+			isa = PBXGroup;
+			children = (
+				92317D2226DCE3910037D15E /* QRWidget.swift */,
+				92317D2426DCE3920037D15E /* Assets.xcassets */,
+				92317D2626DCE3920037D15E /* Info.plist */,
+			);
+			path = QRWidget;
+			sourceTree = "<group>";
+		};
 		92640D1526D7C79200391C97 = {
 			isa = PBXGroup;
 			children = (
 				92640D2026D7C79200391C97 /* KakaoQRWidget */,
+				92317D2126DCE3900037D15E /* QRWidget */,
 				92640D1F26D7C79200391C97 /* Products */,
 				255F4DB16E24D5E7A874E80F /* Pods */,
 				E63218783DB5A7A6A8FABC33 /* Frameworks */,
@@ -71,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				92640D1E26D7C79200391C97 /* KakaoQRWidget.app */,
+				92317D1C26DCE3900037D15E /* QRWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				926DB0878B25B56C79FBBD87 /* Pods_KakaoQRWidget.framework */,
+				92317D1D26DCE3900037D15E /* WidgetKit.framework */,
+				92317D1F26DCE3900037D15E /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +185,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		92317D1B26DCE3900037D15E /* QRWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92317D2D26DCE3920037D15E /* Build configuration list for PBXNativeTarget "QRWidgetExtension" */;
+			buildPhases = (
+				92317D1826DCE3900037D15E /* Sources */,
+				92317D1926DCE3900037D15E /* Frameworks */,
+				92317D1A26DCE3900037D15E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRWidgetExtension;
+			productName = QRWidgetExtension;
+			productReference = 92317D1C26DCE3900037D15E /* QRWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		92640D1D26D7C79200391C97 /* KakaoQRWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92640D3226D7C79500391C97 /* Build configuration list for PBXNativeTarget "KakaoQRWidget" */;
@@ -136,10 +211,12 @@
 				92640D1B26D7C79200391C97 /* Frameworks */,
 				92640D1C26D7C79200391C97 /* Resources */,
 				1F7640A83081FF9991AD6167 /* [CP] Embed Pods Frameworks */,
+				92317D2A26DCE3920037D15E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				92317D2826DCE3920037D15E /* PBXTargetDependency */,
 			);
 			name = KakaoQRWidget;
 			productName = KakaoQRWidget;
@@ -155,6 +232,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					92317D1B26DCE3900037D15E = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					92640D1D26D7C79200391C97 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -174,11 +254,20 @@
 			projectRoot = "";
 			targets = (
 				92640D1D26D7C79200391C97 /* KakaoQRWidget */,
+				92317D1B26DCE3900037D15E /* QRWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		92317D1A26DCE3900037D15E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92317D2526DCE3920037D15E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92640D1C26D7C79200391C97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +322,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		92317D1826DCE3900037D15E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92317D2326DCE3910037D15E /* QRWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92640D1A26D7C79200391C97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +346,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		92317D2826DCE3920037D15E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92317D1B26DCE3900037D15E /* QRWidgetExtension */;
+			targetProxy = 92317D2726DCE3920037D15E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		92640D2C26D7C79500391C97 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -261,6 +366,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		92317D2B26DCE3920037D15E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				INFOPLIST_FILE = QRWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.KakaoQRWidget.QRWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92317D2C26DCE3920037D15E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				INFOPLIST_FILE = QRWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.KakaoQRWidget.QRWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		92640D3026D7C79500391C97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -381,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4168ED414A587BA47388672D /* Pods-KakaoQRWidget.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -401,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EF40347E71E360CAF42929 /* Pods-KakaoQRWidget.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -420,6 +569,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		92317D2D26DCE3920037D15E /* Build configuration list for PBXNativeTarget "QRWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92317D2B26DCE3920037D15E /* Debug */,
+				92317D2C26DCE3920037D15E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92640D1926D7C79200391C97 /* Build configuration list for PBXProject "KakaoQRWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
