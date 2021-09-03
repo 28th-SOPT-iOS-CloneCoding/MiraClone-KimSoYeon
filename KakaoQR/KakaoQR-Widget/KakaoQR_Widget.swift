@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> KakaoEntry {
-        KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!)
+        KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (KakaoEntry) -> ()) {
-        let entry = KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!)
+        let entry = KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!)
         completion(entry)
     }
     
@@ -22,7 +22,7 @@ struct Provider: TimelineProvider {
         var entries: [KakaoEntry] = []
         let policy: TimelineReloadPolicy = .atEnd
         
-        let entry = KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!)
+        let entry = KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!)
         entries.append(entry)
         
         let timeline = Timeline(entries: entries, policy: policy)
@@ -44,17 +44,52 @@ struct KakaoQR_WidgetEntryView : View {
         VStack {
             switch size {
             case .systemSmall:
-                Image("Placeholder")
+                Image("catWithMask")
                     .resizable()
                     .scaledToFill()
             case .systemMedium:
-                VStack {
-                    Text("Medium Size")
+                HStack(alignment: .center) {
+                    Image("catWithMask")
+                        .resizable()
+                        .frame(width: 200, height: 200, alignment: .center)
+                        .scaledToFill()
+                    Spacer()
+                    
+                    VStack(alignment: .center, spacing: 7) {
+                        Text("QR 체크인")
+                            .font(.system(size: 13))
+                            .fontWeight(.semibold)
+                        
+                        Text("홈에서 빠르고 손쉽게\n체크인을 햘 수 있어요!")
+                            .multilineTextAlignment(.center)
+                            .font(.system(size: 10))
+                            .lineSpacing(2)
+                    }
+                    
+                    Spacer()
                 }
             case .systemLarge:
-                VStack {
-                    Text("Large Size")
+                ZStack {
+                    Color.init(UIColor(red: 255.0 / 255.0, green: 232.0 / 255.0, blue: 18.0 / 255.0, alpha: 1.0))
+                    VStack {
+                        HStack {
+                            Text("빠르고 간편한\nKakao QR 체크인")
+                                .font(.system(size: 20))
+                            Spacer()
+                        }
+                        
+                        Image("catWithMask")
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.white, lineWidth: 3)
+                            )
+                    }
+                    .padding()
                 }
+                
             @unknown default:
                 VStack {
                     Text("Default")
@@ -80,24 +115,15 @@ struct KakaoQR_Widget: Widget {
 struct KakaoQR_Widget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!))
+            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!))
+            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
-            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "Placeholder")!))
+            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
         }
+//        .redacted(reason: .placeholder)
     }
 }
 
-
-// MARK: - View (When Widget Touched)
-
-struct QRView: View {
-    var body: some View {
-        VStack {
-            Text("Widget으로 넘어오셨군요!")
-        }
-    }
-}
 
