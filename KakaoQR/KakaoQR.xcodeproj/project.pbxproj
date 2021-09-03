@@ -21,6 +21,7 @@
 		92317D6626DCF6900037D15E /* KakaoQR_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92317D6526DCF6900037D15E /* KakaoQR_Widget.swift */; };
 		92317D6826DCF6910037D15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92317D6726DCF6910037D15E /* Assets.xcassets */; };
 		92317D6C26DCF6910037D15E /* KakaoQR-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92317D5F26DCF6900037D15E /* KakaoQR-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		92915FE826E1C33A00542963 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92915FE726E1C33A00542963 /* UILabel+.swift */; };
 		C26E2F81715870E692CA4299 /* Pods_KakaoQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818E79F33A68F0BB8ECE9074 /* Pods_KakaoQR.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		92317D6526DCF6900037D15E /* KakaoQR_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoQR_Widget.swift; sourceTree = "<group>"; };
 		92317D6726DCF6910037D15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92317D6926DCF6910037D15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92915FE726E1C33A00542963 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		D61CA44E813720FC09353485 /* Pods-KakaoQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQR.debug.xcconfig"; path = "Target Support Files/Pods-KakaoQR/Pods-KakaoQR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				92317D5526DCF5310037D15E /* UIView+.swift */,
 				92317D5726DCF5460037D15E /* UIColor+.swift */,
 				92317D5926DCF5560037D15E /* CALayer+.swift */,
+				92915FE726E1C33A00542963 /* UILabel+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				92317D5626DCF5310037D15E /* UIView+.swift in Sources */,
 				92317D5126DCF4CB0037D15E /* MainVC.swift in Sources */,
+				92915FE826E1C33A00542963 /* UILabel+.swift in Sources */,
 				92317D5326DCF4E40037D15E /* QRViewVC.swift in Sources */,
 				92317D3B26DCF39A0037D15E /* AppDelegate.swift in Sources */,
 				92317D5A26DCF5560037D15E /* CALayer+.swift in Sources */,
