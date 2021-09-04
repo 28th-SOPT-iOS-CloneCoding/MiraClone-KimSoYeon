@@ -35,7 +35,7 @@ struct KakaoEntry: TimelineEntry {
     let image: UIImage
 }
 
-struct KakaoQR_WidgetEntryView : View {
+struct QRCodeEntryView : View {
     @Environment(\.widgetFamily) var size
     
     var entry: Provider.Entry
@@ -75,6 +75,8 @@ struct KakaoQR_WidgetEntryView : View {
                         HStack {
                             Text("빠르고 간편한\nKakao QR 체크인")
                                 .font(.system(size: 20))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
                             Spacer()
                         }
                         
@@ -84,7 +86,7 @@ struct KakaoQR_WidgetEntryView : View {
                             .clipShape(Circle())
                             .overlay(
                                 Circle()
-                                    .stroke(Color.white, lineWidth: 3)
+                                    .stroke(Color.white, lineWidth: 5)
                             )
                     }
                     .padding()
@@ -99,31 +101,75 @@ struct KakaoQR_WidgetEntryView : View {
     }
 }
 
-@main
-struct KakaoQR_Widget: Widget {
+struct QRCode: Widget {
     let kind: String = "KakaoQR_Widget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            KakaoQR_WidgetEntryView(entry: entry)
+            QRCodeEntryView(entry: entry)
         }
         .configurationDisplayName("QR체크인")
         .description("홈 화면에서 QR체크인 페이지로 빠르게 접근합니다.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+    }
+}
+
+// profile widget
+struct ProfileEntryView: View {
+    var entry: Provider.Entry
+
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Image("profile")
+                .resizable()
+                .scaledToFit()
+                .overlay(Color.black.opacity(0.2))
+            
+            VStack {
+                Spacer()
+                Text("김소연")
+                    .font(.system(size: 15))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+            }
+            .padding()
+        }
+    }
+}
+
+struct Profile: Widget {
+    let kind: String = "KakaoProfile_Widget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            ProfileEntryView(entry: entry)
+        }
+        .configurationDisplayName("내 프로필")
+        .description("내 프로필 이미지를 보여주고,\n나와의 채팅방으로 빠르게 접근합니다.")
+        .supportedFamilies([.systemSmall])
+    }
+}
+
+@main
+struct KakaoQR_Widget: WidgetBundle {
+    var body: some Widget {
+        Profile()
+        QRCode()
     }
 }
 
 struct KakaoQR_Widget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
+            ProfileEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "profile")!))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
+            QRCodeEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            QRCodeEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
-            KakaoQR_WidgetEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
+            QRCodeEntryView(entry: KakaoEntry(date: Date(), image: UIImage(named: "catWithMask")!))
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
         }
 //        .redacted(reason: .placeholder)
     }
 }
-
-

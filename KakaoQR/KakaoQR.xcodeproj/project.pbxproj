@@ -18,10 +18,10 @@
 		92317D5A26DCF5560037D15E /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92317D5926DCF5560037D15E /* CALayer+.swift */; };
 		92317D6126DCF6900037D15E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92317D6026DCF6900037D15E /* WidgetKit.framework */; };
 		92317D6326DCF6900037D15E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92317D6226DCF6900037D15E /* SwiftUI.framework */; };
-		92317D6626DCF6900037D15E /* KakaoQR_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92317D6526DCF6900037D15E /* KakaoQR_Widget.swift */; };
 		92317D6826DCF6910037D15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92317D6726DCF6910037D15E /* Assets.xcassets */; };
 		92317D6C26DCF6910037D15E /* KakaoQR-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92317D5F26DCF6900037D15E /* KakaoQR-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		92915FE826E1C33A00542963 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92915FE726E1C33A00542963 /* UILabel+.swift */; };
+		92DF02A826E3B7BB00A01BFA /* KakaoQR_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */; };
 		C26E2F81715870E692CA4299 /* Pods_KakaoQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818E79F33A68F0BB8ECE9074 /* Pods_KakaoQR.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,10 +66,10 @@
 		92317D5F26DCF6900037D15E /* KakaoQR-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KakaoQR-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92317D6026DCF6900037D15E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		92317D6226DCF6900037D15E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		92317D6526DCF6900037D15E /* KakaoQR_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoQR_Widget.swift; sourceTree = "<group>"; };
 		92317D6726DCF6910037D15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92317D6926DCF6910037D15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92915FE726E1C33A00542963 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoQR_Widget.swift; sourceTree = "<group>"; };
 		D61CA44E813720FC09353485 /* Pods-KakaoQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQR.debug.xcconfig"; path = "Target Support Files/Pods-KakaoQR/Pods-KakaoQR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +178,7 @@
 		92317D6426DCF6900037D15E /* KakaoQR-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				92317D6526DCF6900037D15E /* KakaoQR_Widget.swift */,
+				92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */,
 				92317D6726DCF6910037D15E /* Assets.xcassets */,
 				92317D6926DCF6910037D15E /* Info.plist */,
 			);
@@ -344,7 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92317D6626DCF6900037D15E /* KakaoQR_Widget.swift in Sources */,
+				92DF02A826E3B7BB00A01BFA /* KakaoQR_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
