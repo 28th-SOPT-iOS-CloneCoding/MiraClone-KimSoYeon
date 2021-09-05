@@ -54,6 +54,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            print(url)
+            
+            let urlString = url.absoluteString
+            let component = urlString.components(separatedBy: "=")
+            
+            print(component)
+            
+            if component.count > 1, let product = component.last {
+                print(product)
+                
+                // qr 뷰로 이동
+                pushToQR()
+            }
+        }
+    }
+    
+    func pushToQR() {
+        let qrVC = QRViewVC()
+        let rootVC = self.window?.rootViewController
+        qrVC.modalPresentationStyle = .fullScreen
+        qrVC.modalTransitionStyle = .coverVertical
+        rootVC?.present(qrVC, animated: true, completion: nil)
+    }
+        
 }
 

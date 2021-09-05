@@ -98,6 +98,7 @@ struct QRCodeEntryView : View {
                 }
             }
         }
+        .widgetURL(URL(string: "KakaoQR://product=20"))
     }
 }
 
