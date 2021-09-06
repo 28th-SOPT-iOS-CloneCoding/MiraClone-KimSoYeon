@@ -13,6 +13,8 @@ class MainVC: UIViewController {
     
     // MARK: - Properties
     
+    private let mainVM = MainViewModel()
+    
     private var guideLabel = UILabel().then {
         $0.text = "👋🏻 Shake It 👋🏻"
         $0.textColor = .black
@@ -40,10 +42,7 @@ class MainVC: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            let vc = QRViewVC()
-            vc.modalPresentationStyle = .fullScreen
-            vc.modalTransitionStyle = .coverVertical
-            present(vc, animated: true, completion: nil)
+            mainVM.presentToQRCodeVC(self)
         }
     }
 }
