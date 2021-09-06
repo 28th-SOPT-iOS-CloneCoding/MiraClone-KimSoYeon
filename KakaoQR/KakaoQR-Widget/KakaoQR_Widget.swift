@@ -135,6 +135,7 @@ struct ProfileEntryView: View {
             }
             .padding()
         }
+        .widgetURL(URL(string: "KakaoQR://"))
     }
 }
 

@@ -68,6 +68,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
                 // qr 뷰로 이동
                 pushToQR()
+            } else {
+                guard let windowScene = (scene as? UIWindowScene) else { return }
+                
+                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+                window?.windowScene = windowScene
+                
+                let rootVC = MainVC()
+                window?.rootViewController = rootVC
+                window?.makeKeyAndVisible()
             }
         }
     }
