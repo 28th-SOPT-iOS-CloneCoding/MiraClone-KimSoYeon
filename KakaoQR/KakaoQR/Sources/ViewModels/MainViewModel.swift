@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 public class MainViewModel {
-    
     let isShakeAvailable = Observable(true)
 
     func setShakeAvailable(to available: Bool) {
