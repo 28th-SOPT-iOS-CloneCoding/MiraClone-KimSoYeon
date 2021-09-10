@@ -10,7 +10,7 @@ import UIKit
 
 public class LoginViewModel {
     @objc
-    func presentToMainVC(_ view: UIViewController) {
+    func presentMainVC(_ view: UIViewController) {
         let vc = MainVC()
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .coverVertical

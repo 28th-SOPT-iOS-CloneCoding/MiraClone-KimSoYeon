@@ -9,14 +9,8 @@ import Foundation
 import UIKit
 
 public class MainViewModel {
-    let isShakeAvailable = Observable(true)
-
-    func setShakeAvailable(to available: Bool) {
-        self.isShakeAvailable.value = available
-    }
-    
     @objc
-    func presentToQRCodeVC(_ view: UIViewController) {
+    func presentQRCodeVC(_ view: UIViewController) {
         let vc = QRViewVC()
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .coverVertical

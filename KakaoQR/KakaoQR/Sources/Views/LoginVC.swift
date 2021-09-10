@@ -86,7 +86,7 @@ extension LoginVC {
                     
                     // 화면 전환
                     DispatchQueue.main.async {
-                        self.loginVM.presentToMainVC(self)
+                        self.loginVM.presentMainVC(self)
                     }
                 }
                 else {

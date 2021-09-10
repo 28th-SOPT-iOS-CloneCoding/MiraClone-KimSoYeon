@@ -42,7 +42,7 @@ class MainVC: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            mainVM.presentToQRCodeVC(self)
+            mainVM.presentQRCodeVC(self)
         }
     }
 }
