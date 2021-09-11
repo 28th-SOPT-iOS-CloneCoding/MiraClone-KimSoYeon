@@ -16,6 +16,11 @@ enum BiometryType {
     case none
 }
 
+enum AuthenticationState {
+    case logIn
+    case logOut
+}
+
 class LoginVC: UIViewController {
     
     // MARK: - Properties
@@ -80,11 +85,8 @@ extension LoginVC {
         
         let type = self.getBiometryType()
         if type == .faceId {
-            authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "FaceID", reply: { success, error in
+            authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "카카오톡 암호를 입력해주세요.", reply: { success, error in
                 if success {
-                    print("얼굴 인증 성공")
-                    
-                    // 화면 전환
                     DispatchQueue.main.async {
                         self.loginVM.presentMainVC(self)
                     }
@@ -97,9 +99,11 @@ extension LoginVC {
                 }
             })
         } else if type == .touchId {
-            authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "홈 버튼에 손가락을 올려주세요.", reply: { success, error in
+            authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "카카오톡 암호를 입력해주세요.", reply: { success, error in
                 if success {
-                    print("지문 인증 성공")
+                    DispatchQueue.main.async {
+                        self.loginVM.presentMainVC(self)
+                    }
                 }
                 else {
                     if let error = error {

@@ -13,7 +13,7 @@ public class LoginViewModel {
     func presentMainVC(_ view: UIViewController) {
         let vc = MainVC()
         vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .coverVertical
+        vc.modalTransitionStyle = .crossDissolve
         view.present(vc, animated: true, completion: nil)
     }
 }
