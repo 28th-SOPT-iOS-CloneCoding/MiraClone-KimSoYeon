@@ -21,6 +21,7 @@
 		92317D6826DCF6910037D15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92317D6726DCF6910037D15E /* Assets.xcassets */; };
 		92317D6C26DCF6910037D15E /* KakaoQR-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92317D5F26DCF6900037D15E /* KakaoQR-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		92915FE826E1C33A00542963 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92915FE726E1C33A00542963 /* UILabel+.swift */; };
+		92B19CED26ECFEA000AA95B6 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B19CEC26ECFEA000AA95B6 /* UIApplication+.swift */; };
 		92CF961526E67BD30018379D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF961426E67BD30018379D /* Observable.swift */; };
 		92DF02A826E3B7BB00A01BFA /* KakaoQR_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */; };
 		92F50C5326EBC13700EEE9CA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F50C5226EBC13700EEE9CA /* LoginVC.swift */; };
@@ -73,6 +74,7 @@
 		92317D6726DCF6910037D15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92317D6926DCF6910037D15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92915FE726E1C33A00542963 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		92B19CEC26ECFEA000AA95B6 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		92CF961426E67BD30018379D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoQR_Widget.swift; sourceTree = "<group>"; };
 		92F50C5226EBC13700EEE9CA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				92317D5726DCF5460037D15E /* UIColor+.swift */,
 				92317D5926DCF5560037D15E /* CALayer+.swift */,
 				92915FE726E1C33A00542963 /* UILabel+.swift */,
+				92B19CEC26ECFEA000AA95B6 /* UIApplication+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			files = (
 				92317D5626DCF5310037D15E /* UIView+.swift in Sources */,
 				92317D5126DCF4CB0037D15E /* MainVC.swift in Sources */,
+				92B19CED26ECFEA000AA95B6 /* UIApplication+.swift in Sources */,
 				92915FE826E1C33A00542963 /* UILabel+.swift in Sources */,
 				92F50C5326EBC13700EEE9CA /* LoginVC.swift in Sources */,
 				92F50C5926EBC69C00EEE9CA /* LogInViewModel.swift in Sources */,
