@@ -20,6 +20,7 @@
 		92317D6326DCF6900037D15E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92317D6226DCF6900037D15E /* SwiftUI.framework */; };
 		92317D6826DCF6910037D15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92317D6726DCF6910037D15E /* Assets.xcassets */; };
 		92317D6C26DCF6910037D15E /* KakaoQR-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92317D5F26DCF6900037D15E /* KakaoQR-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		92706D4126EE6CC500AE93ED /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706D4026EE6CC500AE93ED /* QRViewModel.swift */; };
 		92915FE826E1C33A00542963 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92915FE726E1C33A00542963 /* UILabel+.swift */; };
 		92B19CED26ECFEA000AA95B6 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B19CEC26ECFEA000AA95B6 /* UIApplication+.swift */; };
 		92CF961526E67BD30018379D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF961426E67BD30018379D /* Observable.swift */; };
@@ -73,6 +74,7 @@
 		92317D6226DCF6900037D15E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		92317D6726DCF6910037D15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92317D6926DCF6910037D15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92706D4026EE6CC500AE93ED /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
 		92915FE726E1C33A00542963 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		92B19CEC26ECFEA000AA95B6 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		92CF961426E67BD30018379D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -200,9 +202,9 @@
 		92CF960F26E679440018379D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				92317D5226DCF4E40037D15E /* QRViewVC.swift */,
 				92317D5026DCF4CB0037D15E /* MainVC.swift */,
 				92F50C5226EBC13700EEE9CA /* LoginVC.swift */,
+				92317D5226DCF4E40037D15E /* QRViewVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +214,7 @@
 			children = (
 				92F50C5626EBC5B800EEE9CA /* MainViewModel.swift */,
 				92F50C5826EBC69C00EEE9CA /* LogInViewModel.swift */,
+				92706D4026EE6CC500AE93ED /* QRViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92317D5626DCF5310037D15E /* UIView+.swift in Sources */,
+				92706D4126EE6CC500AE93ED /* QRViewModel.swift in Sources */,
 				92317D5126DCF4CB0037D15E /* MainVC.swift in Sources */,
 				92B19CED26ECFEA000AA95B6 /* UIApplication+.swift in Sources */,
 				92915FE826E1C33A00542963 /* UILabel+.swift in Sources */,
