@@ -26,8 +26,6 @@
 		92CF961526E67BD30018379D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF961426E67BD30018379D /* Observable.swift */; };
 		92DF02A826E3B7BB00A01BFA /* KakaoQR_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */; };
 		92F50C5326EBC13700EEE9CA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F50C5226EBC13700EEE9CA /* LoginVC.swift */; };
-		92F50C5726EBC5B900EEE9CA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F50C5626EBC5B800EEE9CA /* MainViewModel.swift */; };
-		92F50C5926EBC69C00EEE9CA /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F50C5826EBC69C00EEE9CA /* LogInViewModel.swift */; };
 		C26E2F81715870E692CA4299 /* Pods_KakaoQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818E79F33A68F0BB8ECE9074 /* Pods_KakaoQR.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,8 +78,6 @@
 		92CF961426E67BD30018379D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		92DF02A626E3B7AE00A01BFA /* KakaoQR_Widget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoQR_Widget.swift; sourceTree = "<group>"; };
 		92F50C5226EBC13700EEE9CA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		92F50C5626EBC5B800EEE9CA /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		92F50C5826EBC69C00EEE9CA /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		D61CA44E813720FC09353485 /* Pods-KakaoQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoQR.debug.xcconfig"; path = "Target Support Files/Pods-KakaoQR/Pods-KakaoQR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,8 +208,6 @@
 		92CF961026E6796E0018379D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				92F50C5626EBC5B800EEE9CA /* MainViewModel.swift */,
-				92F50C5826EBC69C00EEE9CA /* LogInViewModel.swift */,
 				92706D4026EE6CC500AE93ED /* QRViewModel.swift */,
 			);
 			path = ViewModels;
@@ -369,14 +363,12 @@
 				92B19CED26ECFEA000AA95B6 /* UIApplication+.swift in Sources */,
 				92915FE826E1C33A00542963 /* UILabel+.swift in Sources */,
 				92F50C5326EBC13700EEE9CA /* LoginVC.swift in Sources */,
-				92F50C5926EBC69C00EEE9CA /* LogInViewModel.swift in Sources */,
 				92317D5326DCF4E40037D15E /* QRViewVC.swift in Sources */,
 				92317D3B26DCF39A0037D15E /* AppDelegate.swift in Sources */,
 				92317D5A26DCF5560037D15E /* CALayer+.swift in Sources */,
 				92CF961526E67BD30018379D /* Observable.swift in Sources */,
 				92317D3D26DCF39A0037D15E /* SceneDelegate.swift in Sources */,
 				92317D5826DCF5460037D15E /* UIColor+.swift in Sources */,
-				92F50C5726EBC5B900EEE9CA /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

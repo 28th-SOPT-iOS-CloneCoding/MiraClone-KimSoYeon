@@ -20,8 +20,6 @@ class LoginVC: UIViewController {
     
     // MARK: - Properties
     
-    private let loginVM = LoginViewModel()
-    
     private var faceImageView = UIImageView().then {
         $0.image = UIImage(named: "faceId")
     }
@@ -83,7 +81,7 @@ extension LoginVC {
             authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "카카오톡 암호를 입력해주세요.", reply: { success, error in
                 if success {
                     DispatchQueue.main.async {
-                        self.loginVM.presentMainVC(self)
+                        self.presentMainVC()
                     }
                 }
                 else {
@@ -98,7 +96,7 @@ extension LoginVC {
             authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "카카오톡 암호를 입력해주세요.", reply: { success, error in
                 if success {
                     DispatchQueue.main.async {
-                        self.loginVM.presentMainVC(self)
+                        self.presentMainVC()
                     }
                 }
                 else {
@@ -109,5 +107,12 @@ extension LoginVC {
                 }
             })
         }
+    }
+    
+    func presentMainVC() {
+        let vc = MainVC()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
 }

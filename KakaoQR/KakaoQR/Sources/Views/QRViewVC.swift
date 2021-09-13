@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 import Then
-//import CoreImage.CIFilterBuiltins
+import CoreImage.CIFilterBuiltins
 
 class QRViewVC: UIViewController {
     
     // MARK: - Properties
     
-    private let qrVM = QRViewModel()
+//    private let qrVM = QRViewModel()
     
     private var closeButton = UIButton()
     
@@ -37,14 +37,14 @@ class QRViewVC: UIViewController {
     
     // MARK: - Local Variables
     
-//    private let context = CIContext()
-//    private let filter = CIFilter.qrCodeGenerator()
+    private let context = CIContext()
+    private let filter = CIFilter.qrCodeGenerator()
     
-//    private var qrImageTimer = Timer()
-//    private var qrImageCount = 0
+    private var qrImageTimer = Timer()
+    private var qrImageCount = 0
     
-//    private var timer = Timer()
-//    private var currentTimeCount = 5
+    private var timer = Timer()
+    private var currentTimeCount = 5
     
     // MARK: - LifeCycle
     
@@ -53,11 +53,11 @@ class QRViewVC: UIViewController {
         
         configUI()
         setConstraints()
-        setBinding()
+//        setBinding()
         setNotification()
         
-//        setQRImageView()
-//        setAction()
+        setQRImageView()
+        setAction()
     }
 }
 
@@ -70,9 +70,6 @@ extension QRViewVC {
         closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         closeButton.tintColor = .black
         closeButton.setPreferredSymbolConfiguration(.init(pointSize: 20, weight: .regular), forImageIn: .normal)
-        closeButton.addAction(UIAction { _ in
-            self.qrVM.dismissToMainVC(self)
-        }, for: .touchUpInside)
         
         titleLabel.text = "입장을 위한 QR x C♾V"
         titleLabel.textColor = .black
@@ -108,8 +105,8 @@ extension QRViewVC {
         
         timerLabel.text = "남은 시간 5초"
         timerLabel.textColor = .black
-//        let targetString1 = timerLabel.text?.components(separatedBy: " ").last ?? ""
-//        timerLabel.asFontColor(targetStringList: [targetString1], font: .systemFont(ofSize: 16), color: .red)
+        let targetString1 = timerLabel.text?.components(separatedBy: " ").last ?? ""
+        timerLabel.asFontColor(targetStringList: [targetString1], font: .systemFont(ofSize: 16), color: .red)
         
         inoculationLabel.text = "코로나19 백신 접종 여부 미접종"
         inoculationLabel.textColor = .darkGray
@@ -175,7 +172,7 @@ extension QRViewVC {
             make.top.equalTo(qrImageView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
-        qrVM.setTimerText()
+//        qrVM.setTimerText()
         
         inoculationLabel.snp.makeConstraints { make in
             make.top.equalTo(timerLabel.snp.bottom).offset(20)
@@ -189,86 +186,87 @@ extension QRViewVC {
         }
     }
     
-    func setBinding() {
-        qrVM.qrcodeMsg.bind { msg in
-            self.qrImageView.image = self.qrVM.generateQRCode(from: msg)
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
         }
-        
-        qrVM.timerText.bind { time in
-            let text = "남은 시간 \(time)초"
-            let attributeStrring = NSMutableAttributedString(string: text)
-            attributeStrring.addAttribute(.foregroundColor, value:  UIColor.red, range: NSRange.init(location: 6, length: String(time).count+1))
-            self.timerLabel.attributedText = attributeStrring
+        return nil
+    }
+    
+    func setQRImageView() {
+        qrImageView.image = generateQRCode(from: "Initial QR Code")
+
+        qrImageTimer.invalidate()
+        qrImageTimer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(qrTimerAction), userInfo: nil, repeats: true)
+
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+
+    @objc
+    func qrTimerAction() {
+        qrImageCount += 1
+        switch qrImageCount {
+        case 1 :
+            qrImageView.image = generateQRCode(from: "This is first change.")
+        case 2 :
+            qrImageView.image = generateQRCode(from: "And this is second change.")
+        case 3 :
+            qrImageView.image = generateQRCode(from: "Then, this is last change.")
+        case 4 :
+            qrImageCount = 0
+            qrImageTimer.invalidate()
+
+            timer.invalidate()
+            timerLabel.text = "인증 유효시간 초과"
+            timerLabel.textColor = .darkGray
+
+            blockView.isHidden = false
+        default :
+            print("Error")
+        }
+    }
+
+    @objc
+    func timerAction() {
+        currentTimeCount -= 1
+
+        timerLabel.text = "남은 시간 \(currentTimeCount)초"
+        let targetString1 = timerLabel.text?.components(separatedBy: " ").last ?? ""
+        timerLabel.asFontColor(targetStringList: [targetString1], font: .systemFont(ofSize: 16), color: .red)
+
+        if currentTimeCount == 0 {
+            currentTimeCount = 6
         }
     }
     
-//    func setQRImageView() {
-//        qrImageView.image = generateQRCode(from: "Initial QR Code")
-//
-//        qrImageTimer.invalidate()
-//        qrImageTimer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(qrTimerAction), userInfo: nil, repeats: true)
-//
-//        timer.invalidate()
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-//    }
-//
-//    @objc
-//    func qrTimerAction() {
-//        qrImageCount += 1
-//        switch qrImageCount {
-//        case 1 :
-//            qrImageView.image = generateQRCode(from: "This is first change.")
-//        case 2 :
-//            qrImageView.image = generateQRCode(from: "And this is second change.")
-//        case 3 :
-//            qrImageView.image = generateQRCode(from: "Then, this is last change.")
-//        case 4 :
-//            qrImageCount = 0
-//            qrTimer.invalidate()
-//
-//            timer.invalidate()
-//            timerLabel.text = "인증 유효시간 초과"
-//            timerLabel.textColor = .darkGray
-//
-//            blockView.isHidden = false
-//        default :
-//            print("Error")
-//        }
-//    }
-//
-//    @objc
-//    func timerAction() {
-//        currentTimeCount -= 1
-//
-//        timerLabel.text = "남은 시간 \(currentTimeCount)초"
-//        let targetString1 = timerLabel.text?.components(separatedBy: " ").last ?? ""
-//        timerLabel.asFontColor(targetStringList: [targetString1], font: .systemFont(ofSize: 16), color: .red)
-//
-//        if currentTimeCount == 0 {
-//            currentTimeCount = 6
-//        }
-//    }
+    func setAction() {
+        let resetAction = UIAction { _ in
+            self.blockView.isHidden = true
+
+            self.currentTimeCount = 5
+            self.timerLabel.text = "남은 시간 5초"
+            self.timerLabel.textColor = .red
+
+            self.setQRImageView()
+        }
+        resetButton.addAction(resetAction, for: .touchUpInside)
+    }
 }
 
+// MARK: - Notification
+
 extension QRViewVC {
-//    func setAction() {
-//        let resetAction = UIAction { _ in
-//            self.blockView.isHidden = true
-//
-//            self.currentTimeCount = 5
-//            self.timerLabel.text = "남은 시간 5초"
-//            self.timerLabel.textColor = .red
-//
-//            self.setQRImageView()
-//        }
-//        resetButton.addAction(resetAction, for: .touchUpInside)
-//    }
-    
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(didTakeScreenShot(notification:)), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveResetNotification(_:)), name: NSNotification.Name("ResetNotification"), object: nil)
-
     }
     
     @objc
@@ -285,3 +283,19 @@ extension QRViewVC {
         timerLabel.textColor = .darkGray
     }
 }
+
+
+//extension QRViewVC {
+//    func setBinding() {
+//        qrVM.qrcodeMsg.bind { msg in
+//            self.qrImageView.image = self.qrVM.generateQRCode(from: msg)
+//        }
+//
+//        qrVM.timerText.bind { time in
+//            let text = "남은 시간 \(time)초"
+//            let attributeStrring = NSMutableAttributedString(string: text)
+//            attributeStrring.addAttribute(.foregroundColor, value:  UIColor.red, range: NSRange.init(location: 6, length: String(time).count+1))
+//            self.timerLabel.attributedText = attributeStrring
+//        }
+//    }
+//}

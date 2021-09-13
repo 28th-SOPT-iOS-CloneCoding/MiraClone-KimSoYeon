@@ -8,18 +8,20 @@
 import UIKit
 import SnapKit
 import Then
+import LocalAuthentication
 
 class MainVC: UIViewController {
     
     // MARK: - Properties
-    
-    private let mainVM = MainViewModel()
     
     private var guideLabel = UILabel().then {
         $0.text = "👋🏻 Shake It 👋🏻"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 20)
     }
+    
+    // MARK: - Local Variables
+    
     
     // MARK: - LifeCycle
     
@@ -42,7 +44,7 @@ class MainVC: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            mainVM.presentQRCodeVC(self)
+            pushToQR()
         }
     }
 }
@@ -58,5 +60,12 @@ extension MainVC {
         guideLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
+    }
+    
+    func pushToQR() {
+        let vc = QRViewVC()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true, completion: nil)
     }
 }
