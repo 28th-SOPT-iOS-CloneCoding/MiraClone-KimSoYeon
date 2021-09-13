@@ -16,11 +16,6 @@ enum BiometryType {
     case none
 }
 
-enum AuthenticationState {
-    case logIn
-    case logOut
-}
-
 class LoginVC: UIViewController {
     
     // MARK: - Properties
@@ -94,6 +89,7 @@ extension LoginVC {
                 else {
                     if let error = error {
                         print(error.localizedDescription)
+                        print("얼굴 인식 불가")
                     }
                     print("취소")
                 }

@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import CoreImage.CIFilterBuiltins
 
 public class QRViewModel {
     
