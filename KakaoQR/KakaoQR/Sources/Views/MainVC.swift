@@ -22,6 +22,7 @@ class MainVC: UIViewController {
     
     // MARK: - Local Variables
     
+    var useWidget = false
     
     // MARK: - LifeCycle
     
@@ -30,6 +31,12 @@ class MainVC: UIViewController {
         
         configUI()
         setConstraints()
+        
+        if useWidget {
+            DispatchQueue.main.async {
+                self.presentQR()
+            }
+        }
         
         becomeFirstResponder()
     }
@@ -44,7 +51,7 @@ class MainVC: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            pushToQR()
+            presentQR()
         }
     }
 }
@@ -62,7 +69,7 @@ extension MainVC {
         }
     }
     
-    func pushToQR() {
+    func presentQR() {
         let vc = QRViewVC()
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .coverVertical

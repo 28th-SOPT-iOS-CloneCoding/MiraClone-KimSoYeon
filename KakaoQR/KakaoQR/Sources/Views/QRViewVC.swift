@@ -70,6 +70,9 @@ extension QRViewVC {
         closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         closeButton.tintColor = .black
         closeButton.setPreferredSymbolConfiguration(.init(pointSize: 20, weight: .regular), forImageIn: .normal)
+        closeButton.addAction(UIAction(handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }), for: .touchUpInside)
         
         titleLabel.text = "입장을 위한 QR x C♾V"
         titleLabel.textColor = .black

@@ -29,6 +29,8 @@ class LoginVC: UIViewController {
     let authContext: LAContext = LAContext()
     var error: NSError?
     
+    var useWidget = false
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -111,6 +113,10 @@ extension LoginVC {
     
     func presentMainVC() {
         let vc = MainVC()
+        if useWidget {
+            vc.useWidget = true
+        }
+        dump(useWidget)
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
