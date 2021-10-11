@@ -16,7 +16,7 @@ class MainVC: UIViewController {
     
     private var guideLabel = UILabel().then {
         $0.text = "👋🏻 Shake It 👋🏻"
-        $0.textColor = .black
+        $0.textColor = UIColor(named: "textColor")
         $0.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
@@ -58,7 +58,7 @@ class MainVC: UIViewController {
 
 extension MainVC {
     func configUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundColor")
     }
     
     func setConstraints() {

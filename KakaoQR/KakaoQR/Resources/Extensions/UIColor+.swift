@@ -13,3 +13,19 @@ extension UIColor {
   }
 }
 
+extension UIColor {
+    static var bgColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor { traitCollection -> UIColor in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return .darkGray
+                } else {
+                    return .white
+                }
+            }
+        } else {
+            return .white
+        }
+    }
+}
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92882D7D270992EB00580348 /* icecream.json in Resources */ = {isa = PBXBuildFile; fileRef = 92882D7C270992EA00580348 /* icecream.json */; };
 		929D9D1E2708BC7D008E7071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929D9D1D2708BC7D008E7071 /* AppDelegate.swift */; };
 		929D9D202708BC7D008E7071 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929D9D1F2708BC7D008E7071 /* SceneDelegate.swift */; };
 		929D9D222708BC7D008E7071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929D9D212708BC7D008E7071 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92882D7C270992EA00580348 /* icecream.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = icecream.json; sourceTree = "<group>"; };
 		929D9D1A2708BC7D008E7071 /* Lottie-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lottie-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		929D9D1D2708BC7D008E7071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929D9D1F2708BC7D008E7071 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		929D9D1C2708BC7D008E7071 /* Lottie-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				92882D7C270992EA00580348 /* icecream.json */,
 				929D9D1D2708BC7D008E7071 /* AppDelegate.swift */,
 				929D9D1F2708BC7D008E7071 /* SceneDelegate.swift */,
 				929D9D212708BC7D008E7071 /* ViewController.swift */,
@@ -135,6 +138,7 @@
 			files = (
 				929D9D2A2708BC7F008E7071 /* LaunchScreen.storyboard in Resources */,
 				929D9D272708BC7F008E7071 /* Assets.xcassets in Resources */,
+				92882D7D270992EB00580348 /* icecream.json in Resources */,
 				929D9D252708BC7D008E7071 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

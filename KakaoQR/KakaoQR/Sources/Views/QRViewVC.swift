@@ -65,22 +65,22 @@ class QRViewVC: UIViewController {
 
 extension QRViewVC {
     func configUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundColor")
         
         closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
-        closeButton.tintColor = .black
+        closeButton.tintColor = UIColor(named: "textColor")
         closeButton.setPreferredSymbolConfiguration(.init(pointSize: 20, weight: .regular), forImageIn: .normal)
         closeButton.addAction(UIAction(handler: { _ in
             self.dismiss(animated: true, completion: nil)
         }), for: .touchUpInside)
         
         titleLabel.text = "입장을 위한 QR x C♾V"
-        titleLabel.textColor = .black
+        titleLabel.textColor = UIColor(named: "textColor")
         titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
         
         subTitleLabel.text = "이용하려는 시설에 QR코드로 체크인하거나 수기명부에\n휴대전화번호 대신 개인안심번호를 기재하세요."
         subTitleLabel.numberOfLines = 2
-        subTitleLabel.textColor = .gray
+        subTitleLabel.textColor = UIColor(named: "textColor")
         subTitleLabel.font = UIFont.systemFont(ofSize: 13)
         subTitleLabel.textAlignment = .center
         

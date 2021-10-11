@@ -49,7 +49,7 @@ class LoginVC: UIViewController {
 
 extension LoginVC {
     func configUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundColor")
     }
     
     func setConstraints() {
