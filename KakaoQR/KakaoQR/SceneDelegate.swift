@@ -58,14 +58,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
         
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-//        window?.windowScene = windowScene
-//
-//        let rootVC = LoginVC()
-//        window?.rootViewController = rootVC
-//        window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+
+        let rootVC = LoginVC()
+        window?.rootViewController = rootVC
+        window?.makeKeyAndVisible()
         
         // background 이동 시 blur 처리
         self.visualEffectView.removeFromSuperview()
