@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		928BC50C2722BC2200F0EA1E /* KeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BC50B2722BC2200F0EA1E /* KeyboardVC.swift */; };
 		9296D3E8271DD982001B59EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296D3E7271DD982001B59EB /* AppDelegate.swift */; };
 		9296D3EA271DD982001B59EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296D3E9271DD982001B59EB /* SceneDelegate.swift */; };
 		9296D3EC271DD982001B59EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296D3EB271DD982001B59EB /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		928BC50B2722BC2200F0EA1E /* KeyboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVC.swift; sourceTree = "<group>"; };
 		9296D3E4271DD982001B59EB /* WhatsNewIniOS15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNewIniOS15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9296D3E7271DD982001B59EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9296D3E9271DD982001B59EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				9296D3F0271DD984001B59EB /* Assets.xcassets */,
 				9296D3F2271DD984001B59EB /* LaunchScreen.storyboard */,
 				9296D3F5271DD984001B59EB /* Info.plist */,
+				928BC50B2722BC2200F0EA1E /* KeyboardVC.swift */,
 			);
 			path = WhatsNewIniOS15;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9296D3EC271DD982001B59EB /* ViewController.swift in Sources */,
+				928BC50C2722BC2200F0EA1E /* KeyboardVC.swift in Sources */,
 				9296D3E8271DD982001B59EB /* AppDelegate.swift in Sources */,
 				9296D3EA271DD982001B59EB /* SceneDelegate.swift in Sources */,
 			);
