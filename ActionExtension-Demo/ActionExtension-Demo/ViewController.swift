@@ -27,28 +27,6 @@ class ViewController: UIViewController {
         activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
         self.present(activityVC, animated: true, completion: nil)
         
-        guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
-            return
-        }
-        
-        // fix
-//        for extensionItem in extensionItems {
-//            if let itemProviders = extensionItem.attachments as? [NSItemProvider] {
-//                for itemProvider in itemProviders {
-//                    if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeText as String) {
-//
-//                        itemProvider.loadItem(forTypeIdentifier: kUTTypeText as String, options: nil, completionHandler: { text, error in
-//                            let newtext = text as! String
-//                            DispatchQueue.main.async {
-//                                self.textView.text = newtext
-//                            }
-//                        })
-//                    }
-//                }
-//            }
-//        }
-        
-        
         activityVC.completionWithItemsHandler =
         { (activityType, completed, returnedItems, error) in
             
@@ -73,19 +51,6 @@ class ViewController: UIViewController {
                             }
                         })
                 }
-                
-                // fix
-//                if let inputItem = returnedItems?.first as? NSExtensionItem {
-//                    if let itemProvider = inputItem.attachments?.first {
-//                        itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String) { [weak self] (string, error) in
-//
-//                            let newtext = string as! String
-//                            DispatchQueue.main.async {
-//                                self?.textView.text = newtext
-//                            }
-//                        }
-//                    }
-//                }
             }
         }
         
